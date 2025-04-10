@@ -8,5 +8,12 @@ class BinaryTree<T>(var value: T) {
 }
 
 fun <T> invertBinaryTree(root: BinaryTree<T>): BinaryTree<T>? {
-    return BinaryTree(root.value);
+    if (root.left != null) {
+       val invertedTree = BinaryTree(root.value)
+       val tmp = root.left
+       invertedTree.left = null
+       invertedTree.right = tmp
+       return invertedTree
+    }
+    return BinaryTree(root.value)
 }
