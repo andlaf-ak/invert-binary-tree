@@ -5,7 +5,7 @@ import kotlin.test.Test
 
 class BinaryTreeTest {
      @Test
-     fun testInvertBinaryTree_withSingleNode_returnsSameValue() {
+     fun shouldInvertBinaryTreeWithOnlyRoot() {
          val root = BinaryTree(1)
          val result = invertBinaryTree(root)
 
