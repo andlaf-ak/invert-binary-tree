@@ -15,5 +15,12 @@ fun <T> invertBinaryTree(root: BinaryTree<T>): BinaryTree<T>? {
        invertedTree.right = tmp
        return invertedTree
     }
+    if (root.right != null) {
+        val invertedTree = BinaryTree(root.value)
+        val tmp = root.right
+        invertedTree.right = null
+        invertedTree.left = tmp
+        return invertedTree
+    }
     return BinaryTree(root.value)
 }
