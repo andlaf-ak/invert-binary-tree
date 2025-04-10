@@ -1,0 +1,102 @@
+# Kotlin build files
+*.class
+*.jar
+*.war
+*.ear
+*.kjsm
+*.js.map
+*.metadata
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# IntelliJ IDEA files
+#####################
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+gen/
+.idea_modules/
+
+# VS Code settings (if you ever use it)
+.vscode/
+
+# Gradle files
+##############
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
+gradle-app.iml
+
+# Maven files
+#############
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Log files
+*.log
+
+# OS files
+##########
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Kotlin/Java annotation processing
+########################
+generated/
+annotation-processed/
+
+# JetBrains Rider (if applicable)
+.idea/.idea.Rider/
+
+# Local environment properties
+##############################
+local.properties
+
+# Temporary files
+#################
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Android specific (if it's Android-Kotlin)
+###########################################
+*.apk
+*.ap_
+captures/
+*.dex
+
+# Kotlin script caches
+.kotlinc/
+.kts/
+
+# Testing reports and coverage
+##############################
+test-results/
+coverage/
+jacoco.exec
+
+# Custom ignores
+################
+*.env
+.env.*
+*.keystore
+*.jks
