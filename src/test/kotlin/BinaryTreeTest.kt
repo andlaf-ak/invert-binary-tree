@@ -52,7 +52,6 @@ class BinaryTreeTest {
         assertNotNull(result?.left)
         assertEquals(3, result?.left?.value)
         assertNotNull(result?.right)
-        assertEquals(2, result?.left?.value)
+        assertEquals(2, result?.right?.value)
     }
-
 }
