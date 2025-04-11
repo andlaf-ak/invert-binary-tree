@@ -1,4 +1,5 @@
 import org.example.BinaryTree
+import org.example.generateRandomBinaryTreePair
 import org.example.invertBinaryTree
 import org.junit.jupiter.api.Assertions.*
 import kotlin.test.Test
@@ -84,5 +85,12 @@ class BinaryTreeTest {
         assertEquals(112, result?.right?.left?.value)
         assertNotNull(result?.right?.right)
         assertEquals(111, result?.right?.right?.value)
+    }
+
+    @Test
+    fun shouldInvertRandomTree() {
+        val (original, originalInverted) = generateRandomBinaryTreePair(100, 100, 0)
+       val inverted = invertBinaryTree(original)
+        assertEquals(originalInverted, inverted)
     }
 }
