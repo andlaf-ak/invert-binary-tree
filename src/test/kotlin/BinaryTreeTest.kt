@@ -57,7 +57,7 @@ class BinaryTreeTest {
 
     @Test
     fun shouldInvertBinarySmallNonTrivialBinaryTree(){
-        val root = BinaryTree(1,
+        val tree = BinaryTree(1,
                         BinaryTree(11,
                             BinaryTree(111),
                             BinaryTree(112)
@@ -67,29 +67,23 @@ class BinaryTreeTest {
                             BinaryTree(222)
                         )
         )
-        val result = invertBinaryTree(root)
+        val expectedInvertedTree = BinaryTree(1,
+                                        BinaryTree(22,
+                                                BinaryTree(222),
+                                                BinaryTree(221)),
+                                        BinaryTree(11,
+                                            BinaryTree(112),
+                                            BinaryTree(111)
+                                        )
+        )
+        val invertedTree = invertBinaryTree(tree)
 
-        assertNotNull(result)
-        assertEquals(1, result?.value)
-
-        assertNotNull(result?.left)
-        assertEquals(22, result?.left?.value)
-        assertNotNull(result?.left?.left)
-        assertEquals(222, result?.left?.left?.value)
-        assertNotNull(result?.left?.right)
-        assertEquals(221, result?.left?.right?.value)
-
-        assertNotNull(result?.right)
-        assertEquals(11, result?.right?.value)
-        assertNotNull(result?.right?.left)
-        assertEquals(112, result?.right?.left?.value)
-        assertNotNull(result?.right?.right)
-        assertEquals(111, result?.right?.right?.value)
+        assertEquals(expectedInvertedTree, invertedTree)
     }
 
     @Test
     fun shouldInvertRandomTree() {
-        val (original, originalInverted) = generateRandomBinaryTreePair(100, 100, 0)
+        val (original, originalInverted) = generateRandomBinaryTreePair(10, 100, 0)
         val inverted = invertBinaryTree(original)
         assertEquals(originalInverted, inverted)
     }

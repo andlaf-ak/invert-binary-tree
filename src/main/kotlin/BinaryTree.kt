@@ -1,13 +1,30 @@
 package org.example
 
-import jdk.incubator.vector.VectorOperators.Binary
 import kotlin.random.Random
 
 class BinaryTree<T>(
     val value: T,
     val left: BinaryTree<T>? = null,
     val right: BinaryTree<T>? = null
-)
+) {
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is BinaryTree<*>) return false
+        if (value != other.value) return false
+
+        return (left == other.left) && (right == other.right)
+    }
+
+    override fun hashCode(): Int {
+        var result = value?.hashCode() ?: 0
+        result = 31 * result + (left?.hashCode() ?: 0)
+        result = 31 * result + (right?.hashCode() ?: 0)
+        return result
+    }
+}
+
+
 
 fun <T> invertBinaryTree(root: BinaryTree<T>?): BinaryTree<T>? {
     if (root == null) {
