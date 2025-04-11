@@ -54,4 +54,36 @@ class BinaryTreeTest {
         assertNotNull(result?.right)
         assertEquals(2, result?.right?.value)
     }
+
+    @Test
+    fun shouldInvertBinarySmallNonTrivialBinaryTree(){
+        val root = BinaryTree(1,
+                        BinaryTree(11,
+                            BinaryTree(111),
+                            BinaryTree(112)
+                        ),
+                        BinaryTree(22,
+                            BinaryTree(221),
+                            BinaryTree(222)
+                        )
+        )
+        val result = invertBinaryTree(root)
+
+        assertNotNull(result)
+        assertEquals(1, result?.value)
+
+        assertNotNull(result?.left)
+        assertEquals(22, result?.left?.value)
+        assertNotNull(result?.left?.left)
+        assertEquals(222, result?.left?.left?.value)
+        assertNotNull(result?.left?.right)
+        assertEquals(221, result?.left?.right?.value)
+
+        assertNotNull(result?.right)
+        assertEquals(11, result?.left?.value)
+        assertNotNull(result?.right?.left)
+        assertEquals(112, result?.left?.left?.value)
+        assertNotNull(result?.right?.right)
+        assertEquals(111, result?.left?.right?.value)
+    }
 }
