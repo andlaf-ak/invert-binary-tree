@@ -90,7 +90,7 @@ class BinaryTreeTest {
     @Test
     fun shouldInvertRandomTree() {
         val (original, originalInverted) = generateRandomBinaryTreePair(100, 100, 0)
-       val inverted = invertBinaryTree(original)
+        val inverted = invertBinaryTree(original)
         assertEquals(originalInverted, inverted)
     }
 }
